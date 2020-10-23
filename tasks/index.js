@@ -70,7 +70,7 @@ module.exports = function (grunt) {
         function parseControllers() {
             task.filesSrc.forEach(function (f) {
                 // Only works with js files, for now
-                if ((/\.js$/).test(f)) {
+                if ((/\.js$/).test(f) || (/\.php$/).test(f)) {
                     readAnnotations(f, function (err, docs) {
                         assert.ifError(err);
                         buildDocs(docs);
